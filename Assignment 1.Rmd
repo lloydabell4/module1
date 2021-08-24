@@ -16,7 +16,7 @@ When you click the **Knit** button a document will be generated that includes bo
 ## Assignment Instructions
 
 For this assignment I'd like for you to:
-1) Upload a dataset into your project folder (https://www.youtube.com/watch?v=GaUE-d7tnNo)
+1) Upload a dataset into your Module 1 project folder
 2) Import the dataset into your environment
 3) Create a R code chunk below and that contains code that imports your dataset into your environment and runs a summary function on your dataset. 
 4) Knit your RMD file into a PDF
