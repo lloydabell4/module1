@@ -1,6 +1,6 @@
 ---
 title: "R Zero"
-author: "ENTER YOUR NAME"
+author: "Andrew Bell"
 output:
   pdf_document: default
   html_document:
@@ -158,8 +158,8 @@ To install packages use the ``install.package()`` function and to load a package
 
 ```{r}
 #type in the the code to install and load the cowsay package below
-
-
+install.packages("cowsay")
+library(cowsay)
 ```
 
 ### **Objects**
@@ -190,15 +190,15 @@ To run multiple lines of code, you can highlight all the line you wish to run an
 #####Create the following objects; give each object an appropriate name (your best guess at what name to use is fine):
 
 #Create an object that has the value of number of pairs of human chromosomes
-
+gene <- 23
 
 #Create an object that has a value of your favorite gene name
-
+fav_gene <- "Jaguars"
 
 #Create an object that has this URL as its value: “ftp://ftp.ensemblgenomes.org/pub/bacteria/release-39/fasta/bacteria_5_collection/escherichia_coli_b_str_rel606/”
 
 #Create an object that has the value of your birthday
-
+bday <-"1983/02/05"
 
 ```
 
@@ -278,19 +278,6 @@ A data frame is the standard way in R to store tabular data. A data fame could a
 
 There are several ways to import data into R. For our purpose here, we will focus on using the tools every R installation comes with (so called “base” R) to import a comma-delimited file containing the results of our variant calling workflow. We will need to load the sheet using a function called read.csv().
 
-```{r Exercise: Review the arguments in the read.csv function}
-# Before using the read.csv() function, use R’s help feature to answer the following questions.
-
-#Hint: Entering ‘?’ before the function name and then running that line will bring up the help documentation. Also, when reading this particular help be careful to pay attention to the ‘read.csv’ expression under the ‘Usage’ heading. Other answers will be in the ‘Arguments’ heading.
-
-#A) What is the default parameter for ‘header’ in the read.csv() function?
-
-#B) What argument would you have to change to read a file that was delimited by semicolons (;) rather than commas?
-
-#C) What argument would you have to change to read file in which numbers used commas for decimal separation (i.e. 1,00)?
-
-#D) What argument would you have to change to read in only the first 10,000 rows of a very large file?
-```
 
 Now, let's read the file ``friends_info.csv`` which is located in ``/Home/Dataviz/Module 1/Data/``. Assign this data frame to an objected called ``friends``. The first argument to ass to our ``read.csv()`` function is the file path for our data. The file path must be in quotes and now is a good time to remember to use tab autocompletion. **If you use tab autocompletion you avoid typos and errors in file paths. Use it!**
 
@@ -333,11 +320,13 @@ Ok, that's a lot up unpack! Some things to notice.
 **Exercise: Import explore new data set**
 ```{r Exercise: Import and explore friends_emotions.csv}
 ## Import the friends_emotions.csv found in the /Data folder and assign the data frame to a new object "emotions"
+friends_emotion <- read.csv("Data/friends_emotions.csv")
 
 ## Explore the structure of emotions. How many variables and observations does your data frame have? What mode are your variables?
+str(friends_emotion)
 
 ## Run summary statistics on your data frame? Is there anything interesting from this summary?
-
+summary(friends_emotion)
 ```
 
 
